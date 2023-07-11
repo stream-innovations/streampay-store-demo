@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
-import { isConnected, sendPayment } from '@gemwallet-beta/api';
+import { isConnected, sendPayment } from '@solana/wallet-adapter-phantom';
 import { useNavbar } from '../../contexts/NavbarContext';
 import { Modal } from '../Modal';
 
@@ -11,7 +11,7 @@ const products = [
     name: 'Throwback Hip Bag',
     href: '#',
     color: 'Salmon',
-    price: '9.00XRP',
+    price: '9.00 SOL',
     quantity: 1,
     imageSrc: 'img/orangebag.jpeg',
     imageAlt:
@@ -22,7 +22,7 @@ const products = [
     name: 'Medium Stuff Satchel',
     href: '#',
     color: 'Blue',
-    price: '3.20XRP',
+    price: '3.20 SOL',
     quantity: 1,
     imageSrc: 'img/bagpack.jpeg',
     imageAlt:
@@ -40,7 +40,7 @@ export function Checkout() {
       if (isConnected) {
         const transaction = {
           amount: '26.20',
-          destination: 'rNvFCZXpDtGeQ3bVas95wGLN6N2stGmA9o'
+          destination: '5jihQavcfDS3PSyDqFxtznhTSD26TCrjx1TrXPbB4jkV'
         };
         sendPayment(transaction)
           .then((trHash) => {
@@ -139,15 +139,15 @@ export function Checkout() {
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
-                        <p>26.20XRP</p>
+                        <p>26.20 SOL</p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">
                         We accept payments with{' '}
                         <a
-                          href="https://gemwallet.app"
+                          href="https://phantom,.app"
                           className="text-indigo-600 font-medium  hover:text-indigo-700"
                         >
-                          GemWallet
+                          Phantom Wallet
                         </a>
                         .
                       </p>
@@ -174,7 +174,7 @@ export function Checkout() {
         <Modal
           icon="fail"
           title="Payment failed"
-          description="Please get GemWallet: https://gemwallet.app"
+          description="Please get Phantom Wallet: https://phantom.app"
           button="Close"
         />
       )}
@@ -182,7 +182,7 @@ export function Checkout() {
         <Modal
           icon="success"
           title="Payment successful"
-          description="Your payment of 26.20XRP has been successful"
+          description="Your payment of 26.20 SOL has been successful"
           button="Close"
         />
       )}
