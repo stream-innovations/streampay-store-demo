@@ -1,10 +1,10 @@
-# GemWallet e-commerce (store) demo
+# StreamWallet e-commerce (store) demo
 
 ![](demo.gif)
 
 Live demo: https://florianbouron.github.io/gemwallet-store-demo/
 
-Don't forget to install [GemWallet](https://gemwallet.app)
+Don't forget to install [Phantom Wallet](https://phantom.app)
 
 First, run husky:
 
