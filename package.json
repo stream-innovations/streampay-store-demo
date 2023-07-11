@@ -1,7 +1,7 @@
 {
   "name": "stream-wallet-store-demo",
   "version": "0.1.0",
-  "homepage": "https://stream-protocol.github.io/stream-wallet-store-demo",
+  "homepage": "https://github.com/stream-innovations/streampay-store-demo",
   "private": true,
   "dependencies": {
     "@gemwallet/api": "^3.2.0",
